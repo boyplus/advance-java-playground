@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         //       Collection                                            Map
-        //          List                   Set              HashMap   Hashtable  SortedMap
-        //   ArrayList LinkedList  HashSet   SortedSet                            TreeMap
+        //          List                  Set              HashMap   Hashtable  SortedMap
+        //   ArrayList LinkedList  HashSet   SortedSet                           TreeMap
         //                                    TreeSet
 
         // Notice that everything that is sorted will be stored in Tree :-
