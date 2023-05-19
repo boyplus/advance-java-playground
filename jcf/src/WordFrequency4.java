@@ -3,10 +3,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class WordFrequency2 {
+public class WordFrequency4 {
     public static void main(String[] args) {
-        // Reversed order of string sorting
-        Map words = new TreeMap<String, Count>(new StringComparator());
+        Map words = new HashMap<String, Count>();
         String delim = " \t\n.,:;?!-/()[]\"\' ";
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(System.in)
@@ -31,15 +30,18 @@ public class WordFrequency2 {
         catch(IOException e) {
 
         }
-        // entrySet() -> return set of Map.Entry<K,V> of map
-        Set<Map.Entry<String, Count>> set = words.entrySet();
-        Iterator it = set.iterator();
-        while (it.hasNext()){
-            // Map Entry
-            Map.Entry<String, Count> entry = (Map.Entry) it.next();
-            word = entry.getKey();
-            count  = entry.getValue();
-            System.out.println(word +" "+count.count);
+
+        Set<String> x = words.keySet();
+        // Raw generic type is also fine
+        // Ex: List it = new ArrayList<Count>(words.values());
+        List<Count> list = new ArrayList<Count>(words.values());
+        Collections.sort(list, new CountComparator());
+
+        Iterator<Count> it = list.iterator();
+        while(it.hasNext()) {
+            count = it.next();
+            word = count.word;
+            System.out.println(word + " " + word.length());
         }
     }
 }
