@@ -3,7 +3,6 @@ import predicate.AppleGreenColorPredicate;
 import predicate.AppleHeavyWeightPredicate;
 import predicate.ApplePredicate;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -59,10 +58,10 @@ public class FilteringApples {
         List<Apple> redApples2  = filterApples(apples, (Apple apple) -> apple.color.toLowerCase().equals("red"));
         printApples(redApples2);
 
-        List<Integer> numbers = new ArrayList<Integer>(List.of(1,2,3,4,5,6,7,8,9));
+        List<Integer> numbers = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9));
         List<Integer> evenNumbers = filter(numbers, (Integer i) -> i%2 == 0);
         System.out.println("Even numbers");
-        for(Integer i:evenNumbers){
+        for(Integer i:evenNumbers) {
             System.out.print(i+" ");
         }
     }
