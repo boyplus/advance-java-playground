@@ -57,17 +57,6 @@ public class SortingApples {
         // *Note
         //   Lambda parameters       Lambda body
         // (Apple a1, Apple a2) -> a1.weight - a2.weight
-
-        // Predicate interface has boolean test(Test t)
-        // We could pass lambda expression that require one parameter (Test) and return boolean
-
-        // Functional interface -> is an interface that specifies exactly one abstract method
-        // Lambda expression let you provide the implementation of the abstract method of a function interface
-        // directly inline and treat the whole expression as an instance of a function interface
-        // -> Instance of a concrete implementation of the functional interface
-        // Can achieve the same thing with an anonymous inner class
-
-
     }
 
     public static void printApples(List<Apple> apples){
