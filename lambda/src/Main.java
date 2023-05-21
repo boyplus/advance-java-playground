@@ -1,3 +1,4 @@
+import model.Apple;
 import predicate.Predicate;
 
 import java.util.ArrayList;
@@ -58,7 +59,6 @@ public class Main {
         // execute(()->{});
         execute((Action) () -> {} );
         execute((Runnable) () -> {} );
-
     }
 
     public static void execute(Runnable runnable){
