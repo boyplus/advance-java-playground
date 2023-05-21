@@ -65,19 +65,6 @@ public class FilteringApples {
         for(Integer i:evenNumbers) {
             System.out.print(i+" ");
         }
-
-
-        ////////////////////////////////////////
-        // Type inference
-        ////////////////////////////////////////
-        List<Apple> greenApples2 = filterApples(apples, (Apple a) -> a.color.toLowerCase().equals("green"));
-        // No explicit type on the parameter apple
-        List<Apple> greenApples3 = filterApples(apples, apple -> apple.color.toLowerCase().equals("green"));
-
-        // Another example
-        Comparator<Apple> c1 = (Apple a1, Apple a2) -> a1.weight - a2.weight;
-        // With type inference
-        Comparator<Apple> c2 = (a1, a2) -> a1.weight - a2.weight;
     }
 
     public static List<Apple> filterApples(List<Apple> apples, ApplePredicate p){
