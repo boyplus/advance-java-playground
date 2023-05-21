@@ -10,6 +10,7 @@ public class TestMethodReference {
 
     public List<String> test(){
         List<String> words = Arrays.asList("Boy","boy");
+//        List<String> filteredWords = filter(words, (String word) -> this.isValidName(word));
         List<String> filteredWords = filter(words, this::isValidName);
         return filteredWords;
     }

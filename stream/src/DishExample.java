@@ -42,7 +42,22 @@ public class DishExample {
         // 2. Chain of intermediate operations that form a stream pipeline
         // 3. A terminal operation -> execute the stream pipeline and produces a result
 
+        // Take while and drop while
+        List<Dish> sliceMenu1  = dishes.stream()
+                .takeWhile(d -> d.getCal() < 320)       // Take el while it's T, if F -> stop
+                .collect(Collectors.toList());
+        printDishes(sliceMenu1);
 
+        List<Dish> sliceMenu2  = dishes.stream()
+                .dropWhile(d -> d.getCal() < 320)       // When get false -> take all remaining el
+                .collect(Collectors.toList());
+        printDishes(sliceMenu2);
+    }
 
+    public static void printDishes(List<Dish> dishes){
+        for(Dish dish:dishes){
+            System.out.println(dish.getName()+" "+dish.getCal());
+        }
+        System.out.println();
     }
 }
